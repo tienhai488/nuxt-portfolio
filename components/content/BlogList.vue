@@ -1,3 +1,4 @@
+import { BlogList } from '../../.nuxt/components';
 <template>
   <section class="not-prose font-mono">
     <div class="column text-gray-400 text-sm">
@@ -10,7 +11,14 @@
           :to="blog._path"
           class="column hover:bg-gray-100 dark:hover:bg-gray-800"
         >
-          <div class="text-gray-500">2023</div>
+          <div
+            :class="{
+              'text-white dark:text-gray-900': !blog.displayYear,
+              'text-gray-400 dark:text-gray-500': blog.displayYear,
+            }"
+          >
+            {{ blog.year }}
+          </div>
           <div>{{ blog.title }}</div>
         </NuxtLink>
       </li>
@@ -23,16 +31,39 @@ useHead({
   title: "Blog",
 });
 
-const { data: blogs } = await useAsyncData("blog-list", () =>
+const { data } = await useAsyncData("blog-list", () =>
   queryContent("/blog")
     .where({
       _path: {
         $ne: "/blog",
       },
     })
-    .only(["_path", "title"])
+    .only(["_path", "title", "publishedAt"])
+    .sort({ publishedAt: -1 })
     .find()
 );
+
+const blogs = computed(() => {
+  if (!data.value.length) {
+    return [];
+  }
+
+  let result = [];
+  let lastYear = null;
+
+  for (let blog of data.value) {
+    let year = new Date(blog.publishedAt).getFullYear();
+    let displayYear = lastYear != year;
+    lastYear = year;
+    result.push({
+      ...blog,
+      year,
+      displayYear,
+    });
+  }
+
+  return result;
+});
 </script>
 
 <style scoped>
