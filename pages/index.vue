@@ -27,4 +27,10 @@ useHead({
     },
   ],
 });
+
+const { data } = await useAsyncData("test", () =>
+  queryContent("/").only("_path").find()
+);
+
+console.log(data);
 </script>
