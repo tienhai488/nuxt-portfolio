@@ -1,3 +1,20 @@
+---
+title: 'Title of the page'
+description: 'meta description of the page'
+head:
+  meta:
+    - name: 'keywords'
+      content: 'nuxt, vue, content'
+    - name: 'robots'
+      content: 'index, follow'
+    - name: 'author'
+      content: 'NuxtLabs'
+    - name: 'copyright'
+      content: '© 2022 NuxtLabs'
+    - name: 'og:title'
+      content: 'This is an OpenGraph title'
+---
+
 # First post on our website
 ## Introduction 
 This is some text. *This is italic*.
@@ -24,3 +41,6 @@ Tables:
 </html>
 ```
 [Go to the second article](/blog/second)
+
+<!--more-->
+Full amount of content beyond the more divider.
