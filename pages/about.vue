@@ -1,9 +1,5 @@
 <template>
-  <h1 class="text-2xl">About</h1>
+  <article class="prose dark:prose-invert">
+    <ContentDoc />
+  </article>
 </template>
-
-<script setup lang="ts">
-useHead({
-  title: "About",
-});
-</script>

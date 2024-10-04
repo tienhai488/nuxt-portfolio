@@ -26,16 +26,14 @@
   </div>
 </template>
   
-  <script setup>
+<script setup>
 const { error, status, data } = await useFetch(
-  "https://api.github.com/users/piotr-jura-udemy/repos",
+  "https://api.github.com/users/tienhai488/repos",
   {
     lazy: true,
   }
 );
 const repos = computed(() =>
-  data.value
-    .filter((repo) => repo.description)
-    .sort((a, b) => b.stargazers_count - a.stargazers_count)
+  data.value.sort((a, b) => b.stargazers_count - a.stargazers_count)
 );
 </script>
