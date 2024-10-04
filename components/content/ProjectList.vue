@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="not-prose">
     <p class="mb-10">Take a look at my GitHub projects!</p>
 
     <section v-if="status == 'pending'">Loading...</section>
@@ -25,8 +25,8 @@
     </section>
   </div>
 </template>
-  
-<script setup>
+    
+  <script setup>
 const { error, status, data } = await useFetch(
   "https://api.github.com/users/tienhai488/repos",
   {
