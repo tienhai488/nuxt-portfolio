@@ -1,4 +1,3 @@
-import { BlogList } from '../../.nuxt/components';
 <template>
   <section class="not-prose font-mono">
     <div class="column text-gray-400 text-sm">
