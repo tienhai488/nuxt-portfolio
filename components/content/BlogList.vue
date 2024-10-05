@@ -8,11 +8,12 @@
       <li v-for="blog in blogs" :key="blog._path">
         <NuxtLink
           :to="blog._path"
-          class="column hover:bg-gray-100 dark:hover:bg-gray-800"
+          class="column hover:bg-gray-100 dark:hover:bg-gray-800 group"
         >
           <div
             :class="{
-              'text-white dark:text-gray-900': !blog.displayYear,
+              'text-white group-hover:text-gray-100 dark:text-gray-900 dark:group-hover:text-gray-800':
+                !blog.displayYear,
               'text-gray-400 dark:text-gray-500': blog.displayYear,
             }"
           >
