@@ -30,17 +30,29 @@ useHead({
   title: "Blog",
 });
 
-const { data } = await useAsyncData("blog-list", () =>
-  queryContent("/blog")
+const props = defineProps({
+  limit: {
+    type: Number,
+    default: null,
+  },
+});
+
+const { data } = await useAsyncData("blog-list", () => {
+  const query = queryContent("/blog")
     .where({
       _path: {
         $ne: "/blog",
       },
     })
     .only(["_path", "title", "publishedAt"])
-    .sort({ publishedAt: -1 })
-    .find()
-);
+    .sort({ publishedAt: -1 });
+
+  if (props.limit) {
+    query.limit(props.limit);
+  }
+
+  return query.find();
+});
 
 const blogs = computed(() => {
   if (!data.value.length) {

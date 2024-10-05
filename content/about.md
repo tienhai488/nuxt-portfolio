@@ -2,9 +2,9 @@
 title: 'About'
 description: 'meta description of the page'
 --- 
-# Hello There, I'm Piotr
+# Hello There, I'm TienHai
 ## About me
-I'm Piotr, I'm a developer and a Udemy Instructor. I'm 36, living in southern Poland with my wife and 2  golden retrievers. I'm vegan and pro-animal 🥑.
+I'm TienHai, I'm a developer and a Udemy Instructor. I'm 36, living in southern Poland with my wife and 2  golden retrievers. I'm vegan and pro-animal 🥑.
 ## What I teach on Udemy
 I teach mostly web development and I have courses on:
 - Laravel (PHP framework)
