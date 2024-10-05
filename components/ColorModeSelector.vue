@@ -1,13 +1,13 @@
 <template>
   <div class="flex space-x-2 items-center">
-    <div class="text-gray-500 text-xs" v-if="showNextModelLabel">
+    <div class="text-gray-500 text-xl md:text-xs" v-if="showNextModelLabel">
       Change to {{ nextMode }}
     </div>
     <button
       @click="toggleMode"
       @mouseenter="showNextModelLabel = true"
       @mouseleave="showNextModelLabel = false"
-      class="hover:bg-gray-200 dark:hover:bg-gray-600 px-2 py-1 text-gray-500"
+      class="hover:bg-gray-200 dark:hover:bg-gray-600 px-2 py-1 text-gray-500 text-4xl md:text-2xl"
     >
       {{ nextModeIcon }}
     </button>
