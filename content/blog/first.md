@@ -42,7 +42,3 @@ Tables:
 	<div>Hello!</div>
 </html>
 ```
-[Go to the second article](/blog/second)
-
-<!--more-->
-Full amount of content beyond the more divider.

@@ -4,6 +4,7 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode',
     '@nuxt/content',
+    '@nuxt/image',
   ],
   app: {
     pageTransition: { name: 'page', mode: 'out-in' }
@@ -20,5 +21,10 @@ export default defineNuxtConfig({
     classSuffix: '',
   },
   compatibilityDate: '2024-04-03',
-  devtools: { enabled: true }
-})
+  devtools: { enabled: true },
+  nitro: {
+    prerender: {
+      routes: ['/sitemap.xml']
+    }
+  },
+});
